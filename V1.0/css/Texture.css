@@ -1,0 +1,221 @@
+@charset "utf-8";
+/* CSS Document */
+
+.roundCornerI{ 
+              font-family: Arial; /* 字体：Arial */
+			  border: 5px solid #000000; /* 边框：粗5px 实线 颜色代码 */
+			  
+			  /* 火狐版 */
+			  -moz-border-radius-topleft: 15px; 
+			  -moz-border-radius-topright: 0px; 
+			  -moz-border-radius-bottomright: 15px; 
+			  -moz-border-radius-bottomleft: 0px; 
+			  /* chrome safari版 */
+			  -webkit-border-top-left-radius: 15px; 
+			  -webkit-border-top-right-radius: 0px; 
+			  -webkit-border-bottom-left-radius: 0px; 
+			  -webkit-border-bottom-right-radius: 15px;
+			  /* IE9+版 */
+			  border-top-left-radius:15px;
+			  border-top-right-radius:0px;
+			  border-bottom-right-radius:15px;
+			  border-bottom-left-radius:0px; 
+			  
+			  padding: 15px 25px; /* 内边距 上下15px 左右25px */
+			  margin: 10px; /* 外边距 上下左右10px */
+			  height: auto; /* 元素高度 自动 */
+			  width: 590px; /* 元素宽度 590px */
+			 }
+.shadow{
+		font-family: Arial; /* 字体：Arial */
+	    border: 5px solid #000000; /* 边框：粗5px 实线 颜色代码 */
+			  
+		/* 火狐版 全圆角 */
+		-moz-border-radius: 15px; 
+		/* chrome safari版 全圆角*/
+		-webkit-border-radius: 15px; 
+		/* IE9+版 全圆角*/
+		border-radius:15px;
+		
+		/* chrome safari版 阴影 水平 垂直 模糊距离 阴影尺寸 颜色 */
+		-webkit-box-shadow: 5px 5px 7px 0.1px #999; 
+		/* IE9+版 阴影 阴影 水平 垂直 模糊距离 阴影尺寸 颜色 */
+		box-shadow: 5px 5px 7px 0.1px #999;
+		
+		padding: 15px 25px; /* 内边距 上下15px 左右25px */
+		margin: 10px; /* 外边距 上下左右10px */
+		height: auto; /* 元素高度 自动 */
+		width: 590px; /* 元素宽度 590px */ 
+	   }			  
+
+.floata{
+		font-family: Arial; /* 字体：Arial */
+	    border: 0.1em solid #000000; /* 边框：粗0.1em 实线 颜色代码 */
+		padding: 15px 25px; /* 内边距 上下15px 左右25px */
+		margin: 10px; /* 外边距 上下左右10px */
+		height: auto; /* 元素高度 自动 */
+		width: 620px; /* 元素宽度 620px */ 
+		
+	   }
+	   
+.floatb{
+		float:left; /* 浮动 向左 */
+		border: 0.1em solid #000000; /* 边框：粗0.1em 实线 颜色代码 */
+		padding: 15px 25px; /* 内边距 上下15px 左右25px */
+		height: 30px; /* 元素高度 30px */
+		width: 235px; /* 元素宽度 235px 235+235+10+10+10+25+25+25+25+25+25=650 这个计算方法有误... */
+		margin: 10px; /* 外边距 上下左右10px */
+		
+		/* 火狐版 全圆角 */
+		-moz-border-radius: 15px; 
+		/* chrome safari版 全圆角*/
+		-webkit-border-radius: 15px; 
+		/* IE9+版 全圆角*/
+		border-radius:15px;
+		
+		/* chrome safari版 阴影 水平 垂直 模糊距离 阴影尺寸 颜色 */
+		-webkit-box-shadow: 3px 3px 5px 0.1px #999; 
+		/* IE9+版 阴影 阴影 水平 垂直 模糊距离 阴影尺寸 颜色 */
+		box-shadow: 3px 3px 5px 0.1px #999;
+	   }
+
+.getMore{
+		 float: left;	/* 向左浮动 */
+		 border: 1px solid; 	/* 边框必须有，不然会出现div乱跑事件， 0px也可以 */
+		 text-align: center;	/* 文字居中 */
+		 margin: 10px;	/* 外边距10px */
+		 padding: 10px 10px 10px 10px;	/* 内边距 上 右 下 左 */
+		 height: 30px;	/* 高度30px 设着玩 */
+		 line-height:30px; /* 设置文字所在行高度与实际高度一样，使文字垂直居中 */
+		 width: 600px;	/* 宽度600px 600+10+10=620 */
+		}
+
+.sidebar{
+		 font-family: Arial; 
+		 position: relative;
+		 left: 10px;
+		 border: 0.1em solid;
+		 width: 100px;
+		 height: 150px;
+		}
+		
+.sidebar ul{
+			list-style:none;
+			margin:0px;
+			padding:0px;
+		   }
+		   
+.sidebar li{
+			padding:0px;
+			margin:0px;
+		   }
+		   
+.sidebar li a{
+		      clear:both;
+		      text-decoration:none;
+		      float:right;
+	          color:inherit;
+	          background:inherit;
+		      height:30px;
+		      line-height:30px;
+	          width:100px;
+	          text-align:center;
+		     }
+			 
+.sidebar li a:hover{
+				    cursor:pointer;
+	                background-color:#921AFF;
+				   }	
+
+.login{
+	    display:none;
+		font-family: Arial; /* 字体：Arial */
+		padding: 15px 25px; /* 内边距 上下15px 左右25px */
+		margin: 10px; /* 外边距 上下左右10px */
+		height: 285px;
+		width: 385px; 
+	   }
+
+.textarea{
+	    /*display:none;*/
+		font-family: Arial; /* 字体：Arial */
+	    
+			  
+		/* 火狐版 全圆角 */
+		-moz-border-radius: 5px; 
+		/* chrome safari版 全圆角*/
+		-webkit-border-radius: 5px; 
+		/* IE9+版 全圆角*/
+		border-radius:5px;
+		
+		height: 30px;
+		width: 300px;
+	   }
+	   
+.tip{
+	height: auto;
+	font-family: Arial;
+	font-size: 14px;
+	color: red;
+	}	   
+	   
+.email1{
+		padding-top: 30px;
+		padding-bottom: 30px;
+		margin-bottom: 30px;
+		margin-left:auto;
+		margin-right:auto;
+		border-bottom: 1px solid #CCCCCC;	    
+	   }
+	   
+.password1{
+		margin-bottom: 35px;
+		padding-bottom: 10px;
+		margin-left:auto;
+		margin-right:auto;	    
+	   }
+	   
+.loginbtn{
+		height: 50px;
+		width: 385px;	    
+	   }
+
+.creatuser{
+	    display:none;
+		font-family: Arial; /* 字体：Arial */
+		padding: 15px 25px; /* 内边距 上下15px 左右25px */
+		margin: 10px; /* 外边距 上下左右10px */
+		height: 285px;
+		width: 385px; 
+	   }	   
+	   
+.name{
+		padding-top: 20px;
+		padding-bottom: 15px;
+		margin-bottom: 15px;
+		margin-left:auto;
+		margin-right:auto;
+		border-bottom: 1px solid #CCCCCC;	    
+	   }
+
+
+.email2{
+		padding-bottom: 15px;
+		margin-left:auto;
+		margin-right:auto;
+		border-bottom: 1px solid #CCCCCC;	    
+	   }
+	   
+.password2{
+	    margin-top:15px;
+		margin-bottom: 15px;
+		padding-bottom: 10px;
+		margin-left:auto;
+		margin-right:auto;	    
+	   }
+	   
+.cubtn{
+		height: 50px;
+		width: 385px;	    
+	   }
+				   

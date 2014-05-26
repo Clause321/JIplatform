@@ -1,0 +1,99 @@
+@charset "utf-8";
+/* CSS Document */
+
+.header{
+	width: 800px;
+	height: auto;
+	padding: 10px;
+	margin: 0px auto;
+}
+
+.logo{
+	margin:auto;
+	margin-top:5px;
+	float:left;
+	height: 50px;
+	width: 50px;
+	background-image:url(../pic/logom.gif);
+	}
+	
+.button1{
+	float: left;
+	margin:10px 30px;
+	height: 45px;
+	width: 50px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 45px;
+	text-decoration: none;
+	color: #FFF;
+}
+
+.button2{
+	float: left;
+	margin:10px 30px;
+	height: 45px;
+	width: 50px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 45px;
+	text-decoration: none;
+	color: #FFF;
+}
+
+.button3{
+	float: left;
+	margin:10px 30px;
+	height: 45px;
+	width: 50px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 45px;
+	text-decoration: none;
+	color: #FFF;
+}
+
+.floata{
+	    width: 800px;
+	    height: auto;
+	    padding: 10px;
+	    margin: 10px auto;
+		font-family: Arial; /* 字体：Arial */
+	   }
+#list{width: 800px;}	      
+
+.floatb{
+		float:left; /* 浮动 向左 */
+		border: 1px solid #fff; /* 边框：粗0.1em 实线 颜色代码 */
+		padding: 10px; /* 内边距 上下15px 左右25px */
+		height: 150px; /* 元素高度 30px */
+		width: 355px; /* 元素宽度 235px 235+235+10+10+10+25+25+25+25+25+25=650 这个计算方法有误... */
+		margin: 10px; /* 外边距 上下左右10px */
+		
+		/* 火狐版 全圆角 */
+		-moz-border-radius: 10px; 
+		/* chrome safari版 全圆角*/
+		-webkit-border-radius: 10px; 
+		/* IE9+版 全圆角*/
+		border-radius:10px;
+		
+		/* chrome safari版 阴影 水平 垂直 模糊距离 阴影尺寸 颜色 */
+		-webkit-box-shadow: 3px 3px 5px 0.1px #000; 
+		/* IE9+版 阴影 阴影 水平 垂直 模糊距离 阴影尺寸 颜色 */
+		box-shadow: 3px 3px 5px 0.1px #000;
+		background-color:#FFF;
+	   }
+
+.getMore{
+	     float:left;
+		 border: 1px solid; 	/* 边框必须有，不然会出现div乱跑事件， 0px也可以 */
+		 text-align: center;	/* 文字居中 */
+		 margin: 10px auto;	/* 外边距10px */
+		 padding: 10px 10px 10px 10px;	/* 内边距 上 右 下 左 */
+		 height: 30px;	/* 高度30px 设着玩 */
+		 line-height:30px; /* 设置文字所在行高度与实际高度一样，使文字垂直居中 */
+		 width: 800px;	/* 宽度600px 600+10+10=620 */
+		 color:#FFF;
+		 border: 0px solid;
+		}	   
+	
