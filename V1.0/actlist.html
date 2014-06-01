@@ -24,9 +24,17 @@
 		<a href="javascript:1();" class="button1">活动1</a>
         <a href="javascript:2();" class="button2">活动2</a>
         <a href="javascript:3();" class="button3">活动3</a>	
+        <a href="javascript:4();" class="button4">我的活动</a>
+        {% if ifLogin %}
+        <a href="javascript:4();" class="button4">发活动</a>	
+        {%end%}
             
-            <a href="javascript:dialoglgin();" class="buttonlg">登陆</a>
-			<a href="javascript:dialogcu();" class="buttoncu">注册</a>
+        {%if ifLogin%}
+        <a href="\" class="buttoncu" >欢迎回来，{{name|safe}}</a>
+        {%else%}
+        <a href="javascript:dialoglgin();" class="buttonlg">登陆</a>
+		<a href="javascript:dialogcu();" class="buttoncu">注册</a>
+        {%end%}
       	
     		<div style="clear:both;"></div> <! 防止框溢出>
     	</div>
@@ -34,21 +42,94 @@
         
         	<div class="floata" >
             
-            <div id="list"></div>
             
             <div class="getMore">
-			<a href="javascript:getMore();" style="text-decoration: none;color:#FFF;">点击加载更多</a> <! 去掉下划线>
-		    </div>
+            <div class="floatb"><div class="imgbox">{{image}}</div><div class="titbox">{{title}}</div><div class="contbox">内容</div><div class="morebox">...更多>></div></div>
+             <div class="floatb"><div class="imgbox">图片</div><div class="titbox">标题</div><div class="contbox">内容</div><div class="morebox">...更多>></div></div>
+              <div class="floatb"><div class="imgbox">图片</div><div class="titbox">标题</div><div class="contbox">内容</div><div class="morebox">...更多>></div></div>
+               <div class="floatb"><div class="imgbox">图片</div><div class="titbox">标题</div><div class="contbox">内容</div><div class="morebox">...更多>></div></div>
+                <div class="floatb"><div class="imgbox">图片</div><div class="titbox">标题</div><div class="contbox">内容</div><div class="morebox">...更多>></div></div>
+                 <div class="floatb"><div class="imgbox">图片</div><div class="titbox">标题</div><div class="contbox">内容</div><div class="morebox">...更多>></div></div>
+            <div id="list"></div>
+            
+            <div style="clear:both;"></div> <! 防止框溢出>
+            
+			<a href="javascript:getMore();" style="text-decoration: none;color:#FFF;">点击加载更多</a> <! 去掉下划线>            
+            
+            
+            </div>
 	
 
 	        <div style="clear:both;"></div> <! 防止框溢出>
 
             </div>
             
+            
+
+		    
+            
     
 </div>
 
 
+<div id="login" class="login">
+
+	{% if form.errors %}
+		<span class="tip" id="tip1"></span>
+	{% endif %}
+    
+    <form action="" method="post">
+		
+         <div class="email1">
+      	 <label for="email">邮箱:</label>
+      	 <input type="text" name="email" id="email1"  class="textarea"/>
+    	 </div>
+    
+   		 <div class="password1">
+  	     <label for="password">密码:</label>
+     	 <input type="password" name="password" id="password1" class="textarea" />
+    	 </div>
+    
+   		 <div class="loginbtn">
+      		<img src="pic/loginbtn.gif" onClick="submit();" />
+    	 </div>
+        		
+         <input type="hidden" name="next" value="{{ next|escape }}" />
+        
+	</form>
+  
+</div>
+
+
+<div id="creatuser" class="creatuser">
+
+    {% if form.errors %}
+		<span class="tip" id="tip2"></span>
+	{% endif %}
+    
+  <form action="" method="post">
+          
+    <div class="name">
+      <label for="name">昵称:</label>
+      <input type="text" name="name" id="name"  class="textarea"/>
+    </div>
+  
+    <div class="email2">
+      <label for="email">邮箱:</label>
+      <input type="text" name="email" id="email2"  class="textarea"/>
+    </div>
+    
+    <div class="password2">
+      <label for="password">密码:</label>
+      <input type="password" name="password" id="password2" class="textarea" />
+    </div>
+    
+    <div class="cubtn">
+      <img src="pic/cubtn.gif" onClick="submit();"  />
+    </div>
+  
+  </form>
+</div>
 
 
 
