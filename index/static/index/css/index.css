@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 
 
@@ -167,4 +167,13 @@
 	margin-right: auto;
 	height: 30px;
 	text-align:right;
+}
+
+.imgbox{
+	position:relative;
+	top:0px;
+	width: 200px;
+	height: 150px;
+	margin-left:auto;
+	margin-right: auto;
 }
