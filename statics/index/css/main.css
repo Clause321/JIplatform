@@ -1,0 +1,138 @@
+@charset "utf-8";
+/* CSS Document */
+
+html,body{
+	height:100%; overflow:hidden; margin:0px; padding:0px;
+}
+
+.mainarea{
+	    overflow: scroll;
+		width: 100%;
+		height: 100%;
+		padding: 25px 0px;
+        background:url(../pic/main_bg.gif) repeat scroll center top rgb(249, 246, 234);
+        background-color: rgb(249, 246, 234);
+        background-repeat: repeat;
+        background-attachment: scroll;
+        background-position: center top;
+        background-clip: border-box;
+        background-origin: padding-box;
+        background-size: 100%;
+}
+
+.buttonlg{
+	float: right;
+	margin:10px;
+	height: 45px;
+	width: 50px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 45px;
+	text-decoration: none;
+	color: #FFF;
+}
+
+.buttoncu{
+	float: right;
+	margin:10px;
+	height: 45px;
+	width: 50px;
+	text-align: center;
+	line-height:45px;
+	text-decoration: none;
+	font-size: 14px;
+	color: #FFF;
+}
+
+.login{
+	    display:none;
+		font-family: Arial; /* 字体：Arial */
+		padding: 15px 25px; /* 内边距 上下15px 左右25px */
+		margin: 10px; /* 外边距 上下左右10px */
+		height: 285px;
+		width: 385px; 
+	   }
+
+.textarea{
+	    /*display:none;*/
+		font-family: Arial; /* 字体：Arial */
+	    
+			  
+		/* 火狐版 全圆角 */
+		-moz-border-radius: 5px; 
+		/* chrome safari版 全圆角*/
+		-webkit-border-radius: 5px; 
+		/* IE9+版 全圆角*/
+		border-radius:5px;
+		
+		height: 30px;
+		width: 300px;
+	   }
+	   
+.tip{
+	height: auto;
+	font-family: Arial;
+	font-size: 14px;
+	color: red;
+	}	   
+	   
+.email1{
+		padding-top: 30px;
+		padding-bottom: 30px;
+		margin-bottom: 30px;
+		margin-left:auto;
+		margin-right:auto;
+		border-bottom: 1px solid #CCCCCC;	    
+	   }
+	   
+.password1{
+		margin-bottom: 35px;
+		padding-bottom: 10px;
+		margin-left:auto;
+		margin-right:auto;	    
+	   }
+	   
+.loginbtn{
+		height: 50px;
+		width: 385px;	    
+	   }
+
+.creatuser{
+	    display:none;
+		font-family: Arial; /* 字体：Arial */
+		padding: 15px 25px; /* 内边距 上下15px 左右25px */
+		margin: 10px; /* 外边距 上下左右10px */
+		height: 285px;
+		width: 385px; 
+	   }	   
+	   
+.name{
+		padding-top: 20px;
+		padding-bottom: 15px;
+		margin-bottom: 15px;
+		margin-left:auto;
+		margin-right:auto;
+		border-bottom: 1px solid #CCCCCC;	    
+	   }
+
+
+.email2{
+		padding-bottom: 15px;
+		margin-left:auto;
+		margin-right:auto;
+		border-bottom: 1px solid #CCCCCC;	    
+	   }
+	   
+.password2{
+	    margin-top:15px;
+		margin-bottom: 15px;
+		padding-bottom: 10px;
+		margin-left:auto;
+		margin-right:auto;	    
+	   }
+	   
+.cubtn{
+		height: 50px;
+		width: 385px;	    
+	   }
+
