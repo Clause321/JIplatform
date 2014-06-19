@@ -4,4 +4,4 @@ from activity.models import Activity
 class ActivityForm(ModelForm):
     class Meta:
         model = Activity
-        include = [ 'title','due_date', 'content', 'summary']
+        fields = [ 'title','due_date', 'content', 'summary']

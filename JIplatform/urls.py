@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'index.views.index', name='index'),
+    url(r'^$', 'index.views.index'),
     # url(r'^JIplatform/', include('JIplatform.JIplatform.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
@@ -14,5 +14,6 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-
+    url(r'^news/write/$', 'activity.views.write_news'),
+    url(r'^test/$', 'index.views.test'),
 )

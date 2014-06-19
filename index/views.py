@@ -1,5 +1,7 @@
 from django.shortcuts import render_to_response
 from activity.models import Activity
+from django import forms
+from django.contrib.auth.forms import UserCreationForm
 
 def index(request):
     news = Activity.objects.filter(group='news').order_by('write_date')[:6]
@@ -9,3 +11,7 @@ def index(request):
                                              'activity': activity,
                                              'announce': announce,
                                              })
+
+def test(request):
+    form = UserCreationForm();
+    return render_to_response('test.html', {'form': form})
