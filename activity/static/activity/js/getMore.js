@@ -5,7 +5,7 @@ var i=6;	//设定全局变量 i 初始值为 6
 function getMore() {	//定义函数
 
     $.ajax({
-        url: '/test1/',
+        url: '/news/',
         type: "POST",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
