@@ -15,14 +15,13 @@ function getMore() {	//定义函数
             var len = msg.length;
 
             for (var j = 0; j < len; j++) {
-                $("#list").append(' <div class="floatb"><div class="imgbox">图片</div><div class="titbox">标题</div><div class="contbox">内容</div><div class="morebox">...更多>></div></div>');
+                var title = msg[j].fields.title;
+                var content = msg[j].fields.content;
+                var img = msg[j].fields.pic;
+                $("#list").append(' <div class="floatb"><div class="imgbox"><img src="{% static '+img+' %}"></img></div><div class="titbox">'+title+'</div><div class="contbox">'+content+'</div><div class="morebox">...更多>></div></div>');
             }
-            //for (var j = 0; j < len; j++) {
-            //    $("#list").append(' <div class="floatb"><div class="imgbox">图片</div><div class="titbox">标题</div><div class="contbox">内容</div><div class="morebox">...更多>></div></div>');
-            //}
 
-            var fff = msg[0].pk;
-            $('#list').append(fff);
+            
         },
 
         error: function (xmlHttpRequest, textStatus, errorThrown) {
