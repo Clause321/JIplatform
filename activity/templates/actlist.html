@@ -1,17 +1,18 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
+{% load staticfiles %}
 <title>活动列表</title>
 <! jquery-UI>
-<script src="{% static 'index/js/jquery-1.9.1.js' %}"></script>
-<script src="{% static 'index/layer/layer.js' %}"></script>
+    <script src="{% static 'index/js/jquery-1.9.1.js' %}"></script>
+    <script src="{% static 'index/layer/layer.js' %}"></script>
 <! css>
-<link href="{% static 'index/css/main.css' %}" rel="stylesheet" />
-<link href="{% static 'index/css/list.css' %}" rel="stylesheet" />
+    <link href="{% static 'index/css/main.css' %}" rel="stylesheet" />
+    <link href="{% static 'activity/css/list.css' %}" rel="stylesheet" />
 <! js>
-<script src="{% static 'index/js/dialog.js' %}"></script>
-<script src="{% static 'index/js/getMore.js' %}"></script>
+    <script src="{% static 'index/js/dialog.js' %}"></script>
+    <script src="{% static 'activity/js/getMore.js' %}"></script>
 </head>
 
 
@@ -27,14 +28,14 @@
         <a href="javascript:4();" class="button4">我的活动</a>
         {% if ifLogin %}
         <a href="javascript:4();" class="button4">发活动</a>	
-        {%end%}
+        {%endif%}
             
         {%if ifLogin%}
         <a href="\" class="buttoncu" >欢迎回来，{{name|safe}}</a>
         {%else%}
         <a href="javascript:dialoglgin();" class="buttonlg">登陆</a>
 		<a href="javascript:dialogcu();" class="buttoncu">注册</a>
-        {%end%}
+        {%endif%}
       	
     		<div style="clear:both;"></div> <! 防止框溢出>
     	</div>
@@ -91,7 +92,7 @@
     	 </div>
     
    		 <div class="loginbtn">
-      		<img src="pic/loginbtn.gif" onClick="submit();" />
+              <img src="/pic/loginbtn.gif" onclick="submit();" />
     	 </div>
         		
          <input type="hidden" name="next" value="{{ next|escape }}" />
@@ -125,7 +126,7 @@
     </div>
     
     <div class="cubtn">
-      <img src="pic/cubtn.gif" onClick="submit();"  />
+        <img src="/pic/cubtn.gif" onclick="submit();" />
     </div>
   
   </form>
