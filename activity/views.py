@@ -3,6 +3,7 @@ from activity.models import Activity
 from activity.forms import ActivityForm
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core import serializers
+from django.core.context_processors import csrf
 import datetime
 
 def write_news(request):
@@ -21,8 +22,12 @@ def write_news(request):
 
 def news(request):
     if request.method =='POST':
-        current_num = request.POST['i']
-        new = Activity.objects.filter(group='news')[current_num:current_num+4]
+        c = {}
+        c.update(csrf(request))
+        #current_num = int(request.POST['i'])
+        #new = Activity.objects.filter(group='news')[current_num:current_num+4]
+        #json = serializers.serialize('json', new)
+        new = Activity.objects.filter(group='news')[:4]
         json = serializers.serialize('json', new)
         return HttpResponse(json)
     else:
