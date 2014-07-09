@@ -10,7 +10,7 @@ class Activity(models.Model):
     # content = UEditorField(u'content',height=100,width=500,default='test',)
     content = models.TextField()
     summary = models.CharField(max_length=50)
-    pic = models.ImageField(upload_to = '/statics/news_img/')
+    pic = models.ImageField(upload_to = 'activity/static/news_img/')
     write_date = models.DateTimeField()
     due_date = models.DateTimeField()
     group = models.CharField(max_length = 15)
