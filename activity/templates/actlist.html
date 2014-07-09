@@ -12,8 +12,13 @@
     <link href="{% static 'activity/css/list.css' %}" rel="stylesheet" />
 <! js>
     <script src="{% static 'index/js/dialog.js' %}"></script>
-    <script src="{% static 'activity/js/getMore.js' %}"></script>
     <script src="{% static 'index/js/jquery.cookie.js' %}"></script>
+
+{% load compress %}
+    {% compress js inline %}
+    <script src="{% static 'activity/js/getMore.js' %}"></script>
+    {% endcompress %}
+
 
     
 </head>
@@ -95,7 +100,7 @@
     	 </div>
     
    		 <div class="loginbtn">
-              <img src="/pic/loginbtn.gif" onclick="submit();" />
+              <img src="/static/index/pic/loginbtn.gif" onclick="submit();" />
     	 </div>
         		
          <input type="hidden" name="next" value="{{ next|escape }}" />
@@ -129,7 +134,7 @@
     </div>
     
     <div class="cubtn">
-        <img src="/pic/cubtn.gif" onclick="submit();" />
+        <img src="/static/index/pic/cubtn.gif" onclick="submit();" />
     </div>
   
   </form>

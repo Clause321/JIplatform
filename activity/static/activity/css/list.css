@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 
 .header{
@@ -157,7 +157,6 @@
 	float: left;
 	width: 150px;
 	height: 150px;
-	
 }
 
 .titbox{
