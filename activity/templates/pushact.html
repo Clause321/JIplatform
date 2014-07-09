@@ -10,10 +10,27 @@
 <script src="{% static 'index/layer/layer.js' %}"></script>
 <! css>
 <link href="{% static 'index/css/main.css' %}" rel="stylesheet" />
-<link href="{% static 'index/css/pushact.css' %}" rel="stylesheet" />
+<link href="{% static 'activity/css/pushact.css' %}" rel="stylesheet" />
 <! js>
 <script src="{% static 'index/js/dialog.js' %}"></script>
-<script src="{% static 'index/js/getMore.js' %}"></script>
+<! time>
+
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen"
+          href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
+
+
+
+<script>
+    $(document).ready(function(){
+    
+        $("#id_title").attr("placeholder", "No more than 30 characters");
+        $("#id_summary").attr("placeholder", "No more than 50 characters");
+        $("#id_content").attr("placeholder", "Please write your content here");
+
+    });
+</script>
+
 </head>
 
 <body>
@@ -37,12 +54,58 @@
 		<a href="javascript:dialogcu();" class="buttoncu">注册</a>
         {%endif%}
 
+
     	<div style="clear:both;"></div> <! 防止框溢出>
     	</div>
-
-        <div class="textarea">{{form}}</div>
-
     	<div style="clear:both;"></div> <! 防止框溢出>
+        <div class="textareap">
+            <div class="ptitle">
+                <label for="id_title">Title:</label>
+                {{form.title}}
+            </div>
+            <div class="psum">
+                <label for="id_summary">Summary:</label>
+                {{form.summary}}
+            </div>
+            
+
+            <div id="datetimepicker" class="input-append date" style="margin: 20px 0px;">
+                <label for="id_due_date">Due Date:</label>
+                {{form.due_date}}
+                <span class="add-on">
+                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                </span>
+
+            </div>
+
+            <script type="text/javascript"
+                    src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+            </script>
+            <script type="text/javascript"
+                    src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
+            </script>
+            <script type="text/javascript"
+                    src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+            </script>
+            <script type="text/javascript"
+                    src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
+            </script>
+            <script type="text/javascript">
+                $('#datetimepicker').datetimepicker({
+                    format: 'dd/MM/yyyy hh:mm:ss',
+                    language: 'en'
+                });
+            </script>
+
+
+            <div class="pcontent">
+                <label for="id_content">Content:</label>
+                {{form.content}}
+            </div>
+
+
+
+            
         </div>
 </div>
 

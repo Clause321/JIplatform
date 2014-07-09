@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 
 .header{
@@ -117,7 +117,7 @@
 .button4:hover{background-color:#FFF; color:#000}
 
 
-.textarea{
+.textareap{
 	/* 火狐版 全圆角 */
 	-moz-border-radius: 10px; 
 	/* chrome safari版 全圆角*/
@@ -130,10 +130,79 @@
 	/* IE9+版 阴影 阴影 水平 垂直 模糊距离 阴影尺寸 颜色 */
 
 	width: 800px;
-	min-height: 400px;
+	min-height: 800px;
 	height: auto;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: #FFF;
 	padding: 10px;
+}
+
+.ptitle {
+    width: 310px;
+    height: 60px;
+}
+
+
+.ptitle input {
+    	/*display:none;*/
+		font-family: Arial; /* 字体：Arial */
+	    
+			  
+		/* 火狐版 全圆角 */
+		-moz-border-radius: 5px; 
+		/* chrome safari版 全圆角*/
+		-webkit-border-radius: 5px; 
+		/* IE9+版 全圆角*/
+		border-radius:5px;
+		
+		height: 30px;
+		width: 300px; 
+
+}
+
+.pcontent{
+    width: 600px;
+    height:320px;
+}
+
+
+.pcontent textarea {
+    	/*display:none;*/
+		font-family: Arial; /* 字体：Arial */
+	    
+			  
+		/* 火狐版 全圆角 */
+		-moz-border-radius: 5px; 
+		/* chrome safari版 全圆角*/
+		-webkit-border-radius: 5px; 
+		/* IE9+版 全圆角*/
+		border-radius:5px;
+		
+		height: 300px;
+		width: 600px; 
+
+}
+
+.psum {
+    width: 310px;
+    height: 60px;
+}
+
+
+.psum input {
+    	/*display:none;*/
+		font-family: Arial; /* 字体：Arial */
+	    
+			  
+		/* 火狐版 全圆角 */
+		-moz-border-radius: 5px; 
+		/* chrome safari版 全圆角*/
+		-webkit-border-radius: 5px; 
+		/* IE9+版 全圆角*/
+		border-radius:5px;
+		
+		height: 30px;
+		width: 300px; 
+
 }
