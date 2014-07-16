@@ -10,7 +10,7 @@ class Activity(models.Model):
     # content = UEditorField(u'content',height=100,width=500,default='test',)
     # content = models.TextField()
     content = UEditorField(u'content', toolbars="full",
-                         imagePath="image/", filePath="file/",
+                         imagePath="image/", filePath="file/", width=800,
                          upload_settings={"imageMaxSize":1204000},
                          settings={},command=None,
                          blank=True)
