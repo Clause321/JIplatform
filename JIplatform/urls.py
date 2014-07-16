@@ -17,5 +17,6 @@ urlpatterns = patterns('',
     url(r'^news/write/$', 'activity.views.write_news'),
     url(r'^test/$', 'index.views.test'),
     url(r'^news/$', 'activity.views.news'),
+    url(r'^news/(ac\d+)/$', 'activity.views.activity_page'),
     url(r'^ueditor/',include('DjangoUeditor.urls' )),
 )
