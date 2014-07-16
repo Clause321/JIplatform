@@ -1,10 +1,12 @@
 ﻿{% extends "base.html" %}
 
 
+
 {% block title %}看活动{% endblock %}
 
 
 {% block jscss %}
+{% load staticfiles %}
 <link href="{% static 'index/css/pushact.css' %}" rel="stylesheet" />
 {% endblock %}
 
@@ -16,14 +18,15 @@
 <a href="javascript:4();" class="button4">我的活动</a>
 {% if ifLogin %}
 <a href="javascript:4();" class="button4">发活动</a>
-{%end%}
+{%endif%}
 {% endblock %}
 
 
 {% block header %}
+
 <div style="clear:both;"></div> <! 防止框溢出>
 
-<div class="textarea">{{form}}</div>
+<div class="textareap">{{activity.content|safe}}</div>
 
 <div style="clear:both;"></div> <! 防止框溢出>
 {% endblock %}

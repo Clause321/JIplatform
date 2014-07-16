@@ -8,10 +8,10 @@ import datetime
 
 def write_news(request):
     if request.method == 'POST':
-        form = ActivityForm(request)
+        form = ActivityForm(request.POST)
         if form.is_valid():
             n = form.save(commit = False)
-            #n.write_date = datetime.datetime.now()
+            n.write_date = datetime.datetime.now()
             n.due_date = datetime.datetime.now()
             n.group = 'news'
             n.save()
