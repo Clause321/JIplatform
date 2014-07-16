@@ -144,22 +144,6 @@
 }
 
 
-.ptitle input {
-    	/*display:none;*/
-		font-family: Arial; /* 字体：Arial */
-	    
-			  
-		/* 火狐版 全圆角 */
-		-moz-border-radius: 5px; 
-		/* chrome safari版 全圆角*/
-		-webkit-border-radius: 5px; 
-		/* IE9+版 全圆角*/
-		border-radius:5px;
-		
-		height: 30px;
-		width: 300px; 
-
-}
 
 .pcontent{
     width: 600px;
@@ -168,22 +152,6 @@
 }
 
 
-.pcontent textarea {
-    	/*display:none;*/
-		font-family: Arial; /* 字体：Arial */
-	    
-			  
-		/* 火狐版 全圆角 */
-		-moz-border-radius: 5px; 
-		/* chrome safari版 全圆角*/
-		-webkit-border-radius: 5px; 
-		/* IE9+版 全圆角*/
-		border-radius:5px;
-		
-		height: 300px;
-		width: 600px; 
-
-}
 
 .psum {
     width: 310px;
@@ -191,8 +159,8 @@
 }
 
 
-.psum input {
-    	/*display:none;*/
+#id_title {
+        /*display:none;*/
 		font-family: Arial; /* 字体：Arial */
 	    
 			  
@@ -205,5 +173,39 @@
 		
 		height: 30px;
 		width: 300px; 
+}
 
+#id_summary {
+        /*display:none;*/
+		font-family: Arial; /* 字体：Arial */
+	    
+			  
+		/* 火狐版 全圆角 */
+		-moz-border-radius: 5px; 
+		/* chrome safari版 全圆角*/
+		-webkit-border-radius: 5px; 
+		/* IE9+版 全圆角*/
+		border-radius:5px;
+		
+		height: 30px;
+		width: 300px; 
+}
+
+#id_due_date {
+        /*display:none;*/
+		font-family: Arial; /* 字体：Arial */
+	    
+			  
+		/* 火狐版 全圆角 */
+		-moz-border-top-left-radius: 5px; 
+        -moz-border-bottom-left-radius: 5px; 
+		/* chrome safari版 全圆角*/
+		-webkit-border-top-left-radius: 5px; 
+        -webkit-border-bottom-left-radius: 5px; 
+		/* IE9+版 全圆角*/
+		border-top-left-radius:5px;
+        border-bottom-left-radius:5px;
+		
+		height: 30px;
+		width: 300px; 
 }
