@@ -2,6 +2,7 @@
 <html>
 <head>
 {% load staticfiles %}
+{{ form.media }}
 <meta charset="utf-8">
 <title>发活动</title>
 <! jquery-UI>
@@ -23,7 +24,7 @@
 
 <script>
     $(document).ready(function(){
-    
+
         $("#id_title").attr("placeholder", "No more than 30 characters");
         $("#id_summary").attr("placeholder", "No more than 50 characters");
         $("#id_content").attr("placeholder", "Please write your content here");
@@ -67,7 +68,7 @@
                 <label for="id_summary">Summary:</label>
                 {{form.summary}}
             </div>
-            
+
 
             <div id="datetimepicker" class="input-append date" style="margin: 20px 0px;">
                 <label for="id_due_date">Due Date:</label>
@@ -106,7 +107,7 @@
             <button type="submit">Submit</button>
 
 
-            
+
         </div>
 </div>
 
