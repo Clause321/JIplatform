@@ -163,7 +163,7 @@
 
 .pcontent{
     width: 600px;
-    height:320px;
+    height: auto;
     margin-bottom:30px;
 }
 
