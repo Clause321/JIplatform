@@ -7,7 +7,7 @@
 
 {% block jscss %}
 {% load staticfiles %}
-<link href="{% static 'index/css/pushact.css' %}" rel="stylesheet" />
+<link href="{% static 'activity/css/pushact.css' %}" rel="stylesheet" />
 {% endblock %}
 
 
@@ -26,7 +26,9 @@
 
 <div style="clear:both;"></div> <! 防止框溢出>
 
-<div class="textareap">{{activity.content|safe}}</div>
+<div class="textareap">
+    {{activity.content|safe}}
+</div>
 
 <div style="clear:both;"></div> <! 防止框溢出>
 {% endblock %}

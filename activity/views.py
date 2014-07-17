@@ -36,6 +36,6 @@ def news(request):
 
 def activity_page(request, ID):
     activity = Activity.objects.get(itemID=ID)
-    return render_to_response('actcontent.html', {'activity', activity})
+    return render_to_response('actcontent.html', {'activity': activity})
 
 
