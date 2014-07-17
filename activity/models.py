@@ -19,7 +19,7 @@ class Activity(models.Model):
     write_date = models.DateTimeField()
     due_date = models.DateTimeField()
     group = models.CharField(max_length = 15)
-    itemID = models.CharField(max_length = 8, default = 00000000)
+    # itemID = models.CharField(max_length = 8, default = 00000000)
 
     def __unicode__(self):
         return self.title
