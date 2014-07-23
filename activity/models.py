@@ -6,9 +6,6 @@ from DjangoUeditor.models import UEditorField
 
 class Activity(models.Model):
     title = models.CharField(max_length=30)
-    # content = UEditorField(u'content',height=100,width=500,default='test',imagePath="images/",imageManagerPath="imglib",toolbars='full',options={"elementPathEnabled":True},filePath='files/',blank=True)
-    # content = UEditorField(u'content',height=100,width=500,default='test',)
-    # content = models.TextField()
     content = UEditorField(u'content', toolbars="full",
                          imagePath="image/", filePath="file/", width=800,
                          upload_settings={"imageMaxSize":1204000},
@@ -18,8 +15,20 @@ class Activity(models.Model):
     pic = models.ImageField(upload_to = 'news_img/')
     write_date = models.DateTimeField()
     due_date = models.DateTimeField()
-    group = models.CharField(max_length = 15)
-    # itemID = models.CharField(max_length = 8, default = 00000000)
+    private = models.BooleanField(default = False)
+    type = models.CharField(max_length = 20)
+    group = models.CharField(max_length = 20)
+    writer_id = models.IntegerField()
 
     def __unicode__(self):
         return self.title
+
+class act_allow_group(models.Model):
+    act_id = models.IntegerField()
+    group_id = models.IntegerField()
+
+    def __unicode__(self):
+        return self.act_id
+
+
+

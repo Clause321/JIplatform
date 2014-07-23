@@ -16,8 +16,11 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^news/write/$', 'activity.views.write_news'),
     url(r'^test/$', 'index.views.test'),
-    url(r'^news/$', 'activity.views.news'),
-    url(r'^news/ac(\d+)/$', 'activity.views.activity_page'),
+    url(r'^news/$', 'activity.views.activity', {'typrOrGroup': 'type', 'name': 'news'}),
+    url(r'^activity/$', 'activity.views.activity', {'typrOrGroup': 'type', 'name': 'activity'}),
+    url(r'^announcement/$', 'activity.views.activity', {'typrOrGroup': 'type', 'name': 'announcement'}),
+    url(r'^group/(?P<name>[a-zA-Z]+)/$', 'activity.views.activity', {'typrOrGroup': 'group'}),
+    url(r'^ac/(\d+)/$', 'activity.views.activity_page'),
     url(r'^ueditor/',include('DjangoUeditor.urls' )),
 )
 
