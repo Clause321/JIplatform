@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 
 html,body{
@@ -18,6 +18,9 @@ html,body{
         background-clip: border-box;
         background-origin: padding-box;
         background-size: 100%;
+
+        -moz-background-clip: border-box;
+        -moz-background-origin: padding-box;
 }
 
 .buttonlg{
