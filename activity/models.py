@@ -15,7 +15,7 @@ class Activity(models.Model):
                          settings={},command=None,
                          blank=True)
     summary = models.CharField(max_length=50)
-    pic = models.ImageField(upload_to = 'activity/static/news_img/')
+    pic = models.ImageField(upload_to = 'news_img/')
     write_date = models.DateTimeField()
     due_date = models.DateTimeField()
     group = models.CharField(max_length = 15)
