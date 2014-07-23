@@ -8,6 +8,7 @@
 {% block jscss %}
 {% load staticfiles %}
 <link href="{% static 'activity/css/pushact.css' %}" rel="stylesheet" />
+<link href="{% static 'activity/css/actcont.css' %}" rel="stylesheet" />
 {% endblock %}
 
 
@@ -26,14 +27,32 @@
 
 <div style="clear:both;"></div> <! 防止框溢出>
 
-<div class="textareap">
-    {{activity.content|safe}}
-</div>
-
-<div style="clear:both;"></div> <! 防止框溢出>
 {% endblock %}
 
 
 {% block content %}
+
+<div class="textareac">
+    <div class="title">
+        {{activity.title|safe}}
+    </div>
+
+    <div class="duedate">
+        截止于---{{activity.due_date.date.year|safe}}年{{activity.due_date.date.month|safe}}月{{activity.due_date.date.day|safe}}日
+    </div>
+
+    <div class="content">
+        {{activity.content|safe}}
+    </div>
+
+
+    
+    
+
+
+
+</div>
+
+<div style="clear:both;"></div> <! 防止框溢出>
 
 {% endblock %}

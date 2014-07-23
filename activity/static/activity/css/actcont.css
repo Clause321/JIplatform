@@ -1,0 +1,54 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+
+.textareac {
+	/* 火狐版 全圆角 */
+	-moz-border-radius: 10px;
+	/* chrome safari版 全圆角*/
+	-webkit-border-radius: 10px;
+	/* IE9+版 全圆角*/
+	border-radius:10px;
+
+	/* chrome safari版 阴影 水平 垂直 模糊距离 阴影尺寸 颜色 */
+	-webkit-box-shadow: 3px 3px 5px 0.1px #000;
+	/* IE9+版 阴影 阴影 水平 垂直 模糊距离 阴影尺寸 颜色 */
+
+	width: 800px;
+	min-height: 800px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+    margin-bottom: 30px;
+	background-color: #FFF;
+	padding: 40px;
+}
+
+
+.title {
+    width: 800px;
+    height: auto;
+    padding: 5px;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+}
+
+.duedate {
+    width: 800px;
+    height: auto;
+    padding: 5px;
+    font-size: 12px;
+    font-style: italic;
+    font-family: 'Times New Roman';
+    margin-bottom: 50px;
+}
+
+
+.cont {
+    width: 800px;
+    height: auto;
+    padding: 5px;
+    font-size: 18px;
+    font-family: 'Times New Roman';
+}
