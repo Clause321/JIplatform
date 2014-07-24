@@ -45,31 +45,18 @@
 
 		<div class="box1">
 			<div class="contenttop">
-			标题1
+			<span>news</span>
 			</div>
 
             <div class="imgbox">
 		    <img src="{{news.0.pic}}" />
 			</div>
 
+            {% for obj in news %}
             <div class="contentmid">
-			{{ news.0.title }}
+			{{ obj.title }}
 			</div>
-			<div class="contentmid">
-            {{ news.1.title }}
-            </div>
-            <div class="contentmid">
-			{{ news.2.title }}
-			</div>
-            <div class="contentmid">
-			{{ news.3.title }}
-			</div>
-            <div class="contentmid">
-			{{ news.4.title }}
-			</div>
-            <div class="contentmid">
-			{{ news.5.title }}
-			</div>
+			{% endfor %}
 
             <div class="contentbtm">
 			更多
