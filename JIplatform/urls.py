@@ -22,6 +22,7 @@ urlpatterns = patterns('',
     url(r'^group/(?P<name>[a-zA-Z]+)/$', 'activity.views.activity', {'typrOrGroup': 'group'}),
     url(r'^ac/(\d+)/$', 'activity.views.activity_page'),
     url(r'^ueditor/',include('DjangoUeditor.urls' )),
+    url(r'^group/$', 'group.views.group'),
 )
 
 from django.conf import settings

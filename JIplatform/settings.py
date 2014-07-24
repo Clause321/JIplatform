@@ -129,6 +129,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'index',
     'activity',
+    'group',
     #other apps
     'compressor',
     'DjangoUeditor',
