@@ -19,6 +19,7 @@ urlpatterns = patterns('',
     url(r'^news/$', 'activity.views.news'),
     url(r'^news/ac(\d+)/$', 'activity.views.activity_page'),
     url(r'^ueditor/',include('DjangoUeditor.urls' )),
+    url(r'^group/$', 'group.views.group'),
 )
 
 from django.conf import settings
