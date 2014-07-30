@@ -37,12 +37,9 @@
 
 
     <div class="getMore">
-        <div class="floatb"><div class="imgbox">tuondlks</div><div class="titbox">{{ activities.0.title }}</div><div class="contbox">dsds</div><div class="morebox">...更多>></div></div>
-        <div class="floatb"><div class="imgbox">图片</div><div class="titbox">标题</div><div class="contbox">内容</div><div class="morebox">...更多>></div></div>
-        <div class="floatb"><div class="imgbox">图片</div><div class="titbox">标题</div><div class="contbox">内容</div><div class="morebox">...更多>></div></div>
-        <div class="floatb"><div class="imgbox">图片</div><div class="titbox">标题</div><div class="contbox">内容</div><div class="morebox">...更多>></div></div>
-        <div class="floatb"><div class="imgbox">图片</div><div class="titbox">标题</div><div class="contbox">内容</div><div class="morebox">...更多>></div></div>
-        <div class="floatb"><div class="imgbox">图片</div><div class="titbox">标题</div><div class="contbox">内容</div><div class="morebox">...更多>></div></div>
+        {% for item in activities %}
+        <div class="floatb"><div class="imgbox"><img src="{{ item.pic }}"/></div><div class="titbox">{{ item.title }}</div><div class="contbox">{{ item.summary }}</div><div class="morebox">...<a href="/ac/{{ item.id }}/">更多>></a></div></div>
+        {% endfor %}
         <div id="list"></div>
 
         <div style="clear:both;"></div> <! 防止框溢出>

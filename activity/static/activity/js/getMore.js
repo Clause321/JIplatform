@@ -32,7 +32,7 @@ function getMore() {	//定义函数
     });
 
     i = i + 2;
-    var csrftoken = $.cookie('csrftoken');
+    //var csrftoken = $.cookie('csrftoken');
 
 
 };
