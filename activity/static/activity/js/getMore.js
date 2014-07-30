@@ -8,7 +8,9 @@ function getMore() {	//定义函数
         url: '/news/',
         type: "POST",
         dataType: "json",
-        data: aaa,
+        data: [
+                    { name: "aaa", value: aaa },
+        ],
 
         success: function (msg) {
 
