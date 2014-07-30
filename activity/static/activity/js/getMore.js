@@ -21,6 +21,7 @@ function getMore() {	//定义函数
                 $("#list").append(function(n) { return '<div class="floatb"><div class="imgbox"><img src="/media/' +img+ '"></img></div><div class="titbox">'+title+'</div><div class="contbox">'+content+'</div><div class="morebox">...更多>></div></div>' });
             }
 
+            i = i + len;
             
         },
 
@@ -31,7 +32,7 @@ function getMore() {	//定义函数
         }
     });
 
-    i = i + len;
+    
     //var csrftoken = $.cookie('csrftoken');
 
 
