@@ -18,7 +18,8 @@ class Activity(models.Model):
     private = models.BooleanField(default = False)
     type = models.CharField(max_length = 20)
     group = models.CharField(max_length = 20)
-    writer_id = models.IntegerField()
+    #the line below should be uncommented when user is added
+    #writer_id = models.IntegerField()
 
     def __unicode__(self):
         return self.title

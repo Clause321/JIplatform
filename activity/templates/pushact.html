@@ -41,10 +41,23 @@
 {% block content %}
 <div style="clear:both;"></div> <! 防止框溢出>
 <div class="textareap">
-    <form action="../write/" method="post" style="margin-bottom: 20px; padding-bottom: 20px;">
+    <form action="../write/" method="post" enctype="multipart/form-data" style="margin-bottom: 20px; padding-bottom: 20px;">
         <span>
         {{ form.errors }}
         </span>
+
+        <div class="ptype">
+            <span>Please choose the type</span>
+
+            <label for="type_news">News:</label>
+            <input type="radio" name="type" value="news" id="type_news"/>
+
+            <label for="type_activity">Activity:</label>
+            <input type="radio" name="type" value="activity" id="type_activity"/>
+
+            <label for="type_announce">Announcement:</label>
+            <input type="radio" name="type" value="announce" id="type_announce"/>
+        </div>
         <div class="ptitle">
             <label for="id_title">Title:</label>
             {{form.title}}

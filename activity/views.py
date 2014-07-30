@@ -1,5 +1,5 @@
 from django.shortcuts import render_to_response
-from activity.models import Activity, act_allow_group, act_group
+from activity.models import Activity, act_allow_group
 from activity.forms import ActivityForm
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core import serializers
@@ -10,17 +10,16 @@ import datetime
 
 def write_act(request):
     if request.method == 'POST':
-        form = ActivityForm(request.POST)
+        form = ActivityForm(request.POST, request.FILES)
         if form.is_valid():
             # activity
             n = form.save(commit = False)
             n.write_date = datetime.datetime.now()
             n.save()
-            # group
-            g = act_group()
-            g.act_id = n.id
-            g.group_id = Grp.objects.get(name = form.group)
-            g.save()
+            #the line below should be uncommented when user is added
+            #n.writer_id = request.user.id
+
+
             # allow_group
             # to be done
             return HttpResponseRedirect('/write/')

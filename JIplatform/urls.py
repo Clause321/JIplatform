@@ -14,7 +14,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^news/write/$', 'activity.views.write_news'),
+    url(r'^write/$', 'activity.views.write_act'),
     url(r'^test/$', 'index.views.test'),
     url(r'^news/$', 'activity.views.activity', {'typrOrGroup': 'type', 'name': 'news'}),
     url(r'^activity/$', 'activity.views.activity', {'typrOrGroup': 'type', 'name': 'activity'}),
