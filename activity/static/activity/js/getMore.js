@@ -7,6 +7,7 @@ function getMore() {	//定义函数
     $.ajax({
         url: '/news/',
         type: "POST",
+        dataType: "json",
         data: [
                     { name: "aaa", value: aaa },
         ],
@@ -23,7 +24,7 @@ function getMore() {	//定义函数
             }
 
             aaa = aaa + len;
-            
+
         },
 
         error: function (xmlHttpRequest, textStatus, errorThrown) {
@@ -33,7 +34,7 @@ function getMore() {	//定义函数
         }
     });
 
-    
+
     //var csrftoken = $.cookie('csrftoken');
 
 
