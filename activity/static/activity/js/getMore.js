@@ -8,7 +8,7 @@ function getMore() {	//定义函数
         url: '/news/',
         type: "POST",
         dataType: "json",
-        //data: i,
+        data: i,
 
         success: function (msg) {
 
@@ -18,7 +18,7 @@ function getMore() {	//定义函数
                 var title = msg[j].fields.title;
                 var content = msg[j].fields.content;
                 var img = msg[j].fields.pic;
-                $("#list").append(function(n) { return '<div class="floatb"><div class="imgbox"><img src="/static/' +img+ '"></img></div><div class="titbox">'+title+'</div><div class="contbox">'+content+'</div><div class="morebox">...更多>></div></div>' });
+                $("#list").append(function(n) { return '<div class="floatb"><div class="imgbox"><img src="/media/' +img+ '"></img></div><div class="titbox">'+title+'</div><div class="contbox">'+content+'</div><div class="morebox">...更多>></div></div>' });
             }
 
             
