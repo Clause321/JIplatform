@@ -37,10 +37,10 @@ def activity(request, typeOrGroup, name):
         return HttpResponse(json)
     else:
         if typeOrGroup == 'type':
-            activities = Activity.objects.filter(type = name)[:6]
+            activities = Activity.objects.filter(type = name).order_by('-write_date')[:6]
             #need order_by
         elif typeOrGroup == 'group':
-            activities = Activity.objects.filter(group = name)[:6]
+            activities = Activity.objects.filter(group = name).order_by('-write_date')[:6]
         return render_to_response('actlist.html', {'activities': activities})
 
 def activity_page(request, ID):
