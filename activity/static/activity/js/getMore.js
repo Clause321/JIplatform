@@ -1,6 +1,6 @@
 // JavaScript Document
 
-var i=6;	//设定全局变量 i 初始值为 6
+var aaa=6;	//设定全局变量 i 初始值为 6
 
 function getMore() {	//定义函数
 
@@ -8,7 +8,7 @@ function getMore() {	//定义函数
         url: '/news/',
         type: "POST",
         dataType: "json",
-        data: i,
+        data: aaa,
 
         success: function (msg) {
 
@@ -21,7 +21,7 @@ function getMore() {	//定义函数
                 $("#list").append(function(n) { return '<div class="floatb"><div class="imgbox"><img src="/media/' +img+ '"></img></div><div class="titbox">'+title+'</div><div class="contbox">'+content+'</div><div class="morebox">...更多>></div></div>' });
             }
 
-            i = i + len;
+            aaa = aaa + len;
             
         },
 
