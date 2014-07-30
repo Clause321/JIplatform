@@ -31,7 +31,7 @@ function getMore() {	//定义函数
         }
     });
 
-    i = i + 2;
+    i = i + len;
     //var csrftoken = $.cookie('csrftoken');
 
 

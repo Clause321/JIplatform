@@ -38,7 +38,7 @@
 
     <div class="getMore">
         {% for item in activities %}
-        <div class="floatb"><div class="imgbox"><img src="{{ item.pic }}"/></div><div class="titbox">{{ item.title }}</div><div class="contbox">{{ item.summary }}</div><div class="morebox">...<a href="/ac/{{ item.id }}/">更多>></a></div></div>
+        <div class="floatb"><div class="imgbox"><img src="/static/{{ item.pic }}"/></div><div class="titbox">{{ item.title }}</div><div class="contbox">{{ item.summary }}</div><div class="morebox">...<a href="/ac/{{ item.id }}/">更多>></a></div></div>
         {% endfor %}
         <div id="list"></div>
 
