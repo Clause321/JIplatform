@@ -7,6 +7,7 @@ def index(request):
     news = Activity.objects.filter(type='news').order_by('write_date')[:6]
     activity = Activity.objects.filter(type='activity').order_by('write_date')[:6]
     announce = Activity.objects.filter(type='announce').order_by('write_date')[:6]
+    #need reverse write_date
     return render_to_response('index.html', {'news': news,
                                              'activity': activity,
                                              'announce': announce,
