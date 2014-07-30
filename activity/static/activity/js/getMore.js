@@ -7,7 +7,6 @@ function getMore() {	//定义函数
     $.ajax({
         url: '/news/',
         type: "POST",
-        dataType: "json",
         data: [
                     { name: "aaa", value: aaa },
         ],
