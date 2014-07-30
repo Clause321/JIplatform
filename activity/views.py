@@ -32,7 +32,7 @@ def activity(request, typeOrGroup, name):
         #current_num = int(request.POST['i'])
         #new = Activity.objects.filter(group='news')[current_num:current_num+4]
         #json = serializers.serialize('json', new)
-        new = Activity.objects.filter(group='news')[:4]
+        new = Activity.objects.filter(type = 'news').order_by('-write_date')[:4]
         json = serializers.serialize('json', new)
         return HttpResponse(json)
     else:
