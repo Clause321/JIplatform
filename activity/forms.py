@@ -6,4 +6,5 @@ class ActivityForm(ModelForm):
     pic = forms.ImageField()
     class Meta:
         model = Activity
+        # need for allow_group
         fields = [ 'title','due_date', 'content', 'summary', 'pic', 'type']

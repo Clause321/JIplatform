@@ -28,23 +28,21 @@ def write_act(request):
     return render_to_response('pushact.html', {'form': form})
 
 def activity(request, typeOrGroup, name):
-    if request.method =='POST':         # to be done
-        #return HttpResponse(request.POST['aaa'])
+    if request.method =='POST':
+        # add_more function, not complete for group. Should use filter form.
         current_num = int(request.POST['aaa'])
-        #new = Activity.objects.filter(group='news')[current_num:current_num+4]
-        #json = serializers.serialize('json', new)
         new = Activity.objects.filter(type = 'news').order_by('-write_date')[current_num:current_num+4]
         json = serializers.serialize('json', new)
         return HttpResponse(json)
     else:
         if typeOrGroup == 'type':
             activities = Activity.objects.filter(type = name).order_by('-write_date')[:6]
-            #need order_by
         elif typeOrGroup == 'group':
             activities = Activity.objects.filter(group = name).order_by('-write_date')[:6]
         return render_to_response('actlist.html', {'activities': activities})
 
 def activity_page(request, ID):
+    # need to check permission if private
     activity = Activity.objects.get(id=ID)
     return render_to_response('actcontent.html', {'activity': activity})
 
