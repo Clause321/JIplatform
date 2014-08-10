@@ -6,6 +6,7 @@ from django.core import serializers
 from django.core.context_processors import csrf
 from group.models import Group as Grp
 from django.contrib.auth.models import Group, User
+from django import forms
 import datetime
 
 def write_act(request):
@@ -29,17 +30,51 @@ def write_act(request):
 
 def activity(request, typeOrGroup, name):
     if request.method =='POST':
-        # add_more function, not complete for group. Should use filter form.
+        # using filter form, still need modification for js
         current_num = int(request.POST['aaa'])
-        new = Activity.objects.filter(type = 'news').order_by('-write_date')[current_num:current_num+4]
+        new = activityFilterForm(request.POST) # is this line right?
+        new = new.acFilter()
+        new = new[current_num:current_num+4]
         json = serializers.serialize('json', new)
         return HttpResponse(json)
     else:
+        ac = activityFilterForm()
+
         if typeOrGroup == 'type':
-            activities = Activity.objects.filter(type = name).order_by('-write_date')[:6]
+            ac.type = name;
         elif typeOrGroup == 'group':
-            activities = Activity.objects.filter(group = name).order_by('-write_date')[:6]
-        return render_to_response('actlist.html', {'activities': activities})
+            #need to check permission for seek
+            ac.group = name;
+
+        ac.acFilter()
+        ac = ac[:6]
+        return render_to_response('actlist.html', {'activities': ac})
+
+class activityFilterForm(forms.Form):
+    ac = Activity.objects.all()
+
+    type = forms.CharField(label='type', max_length=20)
+    group = forms.CharField(label='group', max_length=20)
+    seek = forms.BooleanField()
+
+    title = forms.CharField(label='title', max_length=30)
+
+    def acFilter(self):
+        if 'type' in self:
+            self.ac = self.ac.filter(type = self.type)
+        if 'group' in self:
+            self.ac = self.ac.filter(group = self.group)
+        if not 'seek' in self:   # do not include activities already due
+            self.ac.filter(due_date__gte = datetime.datetime.now()) # naive datetime?
+
+        if 'title' in self:  # search title
+            self.ac = self.ac.filter(title__icontains = self.title)
+
+        self.ac = self.ac.order_by('-write_date')
+
+    # may add group filter to obtain seeked or unseeked activities for different groups
+
+
 
 def activity_page(request, ID):
     # need to check permission if private
