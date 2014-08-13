@@ -53,11 +53,11 @@ def activity(request, typeOrGroup, name):
 class activityFilterForm(forms.Form):
     ac = Activity.objects.all()
 
-    type = forms.CharField(label='type', max_length=20)
-    group = forms.CharField(label='group', max_length=20)
-    seek = forms.BooleanField()
+    type = forms.CharField(label='type', max_length=20, required = False)
+    group = forms.CharField(label='group', max_length=20, required = False)
+    seek = forms.BooleanField(required = False)
 
-    title = forms.CharField(label='title', max_length=30)
+    title = forms.CharField(label='title', max_length=30, required = False)
 
     def acFilter(self):
         if 'type' in self:
