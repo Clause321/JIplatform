@@ -13,10 +13,10 @@ def register(request):
             return HttpResponseRedirect('/login/')
         error = new_user.errors
 
-    return HttpResponseRedirect('/', {'register_error': error})
+    return HttpResponseRedirect('/', {'register_error': error}) # should use js to pass error message
 
 def login_view(request):
-    error = {'username': '', 'password': ''}
+    error = ''
     if request.method == 'POST':
         user = authenticate(username = request.POST['username'],
                         password = request.POST['password'])
@@ -25,11 +25,10 @@ def login_view(request):
                 login(request, user)
                 return HttpResponseRedirect('/')
             else:
-                return HttpResponse("The account has been disabled")
+                error = "The account has been disabled"
         else:
-            return HttpResponse("The username and password were incorrect.")
-        return render_to_response('index.html', {'error': error})
-    return HttpResponseRedirect('/', {'login_error': error})
+            error = "The username and password were incorrect."
+        return HttpResponseRedirect('/', {'login_error': error}) # should use js to pass error message
 
 def logout_view(request):
     logout(request)

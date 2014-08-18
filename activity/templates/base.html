@@ -27,6 +27,7 @@
             {% if user.is_authenticated %}
             <a href="\" class="buttoncu">欢迎回来，{{user}}</a>
             <a href="javascript:();" class="buttoncu">发活动</a>
+            <a href="/logout/" class="buttoncu">logout</a>
             {%else%}
             <a href="javascript:dialoglgin();" class="buttonlg">登陆</a>
             <a href="javascript:dialogcu();" class="buttoncu">注册</a>
@@ -41,7 +42,7 @@
 
 
     <div id="login" class="login">
-
+        {{login_error}}
         {% if error %}
         <span class="tip" id="tip1"></span>
         {% endif %}
