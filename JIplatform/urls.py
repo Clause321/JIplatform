@@ -23,6 +23,9 @@ urlpatterns = patterns('',
     url(r'^ac/(\d+)/$', 'activity.views.activity_page'),
     url(r'^ueditor/',include('DjangoUeditor.urls' )),
     url(r'^group/$', 'group.views.group'),
+    url(r'^register/$', 'user_ctrl.views.register'),
+    url(r'^login/$', 'user_ctrl.views.login_view'),
+    url(r'^logout/$', 'user_ctrl.views.logout_view'),
 )
 
 from django.conf import settings
