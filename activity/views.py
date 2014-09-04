@@ -33,9 +33,9 @@ def activity(request, typeOrGroup, name):
         # using filter form, still need modification for js
         current_num = int(request.POST['aaa'])
         new = activityFilterForm(request.POST) # is this line right?
-        new = new.acFilter()
-        new = new[current_num:current_num+4]
-        json = serializers.serialize('json', new)
+        new.acFilter()
+        # new = new[current_num:current_num+4]
+        json = serializers.serialize('json', new.ac[current_num:current_num+4])
         return HttpResponse(json)
     else:
         ac = activityFilterForm()
@@ -47,8 +47,8 @@ def activity(request, typeOrGroup, name):
             ac.group = name;
 
         ac.acFilter()
-        ac = ac[:6]
-        return render_to_response('actlist.html', {'activities': ac})
+        # ac = ac[:6]
+        return render_to_response('actlist.html', {'activities': ac.ac[:6]})
 
 class activityFilterForm(forms.Form):
     aaa = forms.IntegerField(required = False)
