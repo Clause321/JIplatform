@@ -51,6 +51,7 @@ def activity(request, typeOrGroup, name):
         return render_to_response('actlist.html', {'activities': ac})
 
 class activityFilterForm(forms.Form):
+    aaa = forms.IntegerField(required = False)
     ac = Activity.objects.all()
 
     type = forms.CharField(label='type', max_length=20, required = False)
