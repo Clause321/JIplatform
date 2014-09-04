@@ -33,21 +33,22 @@ def activity(request, typeOrGroup, name):
         # using filter form, still need modification for js
         current_num = int(request.POST['aaa'])
         new = activityFilterForm(request.POST) # is this line right?
-        new.acFilter()
-        # new = new[current_num:current_num+4]
-        json = serializers.serialize('json', new.ac[current_num:current_num+4])
-        return HttpResponse(json)
+        if new.is_valid():
+            new.acFilter()
+            json = serializers.serialize('json', new.ac[current_num:current_num+4])
+            return HttpResponse(json)
+        else:
+            return HttpResponse('The post data is not valid!')
     else:
         ac = activityFilterForm()
 
+        ac.full_clean()
         if typeOrGroup == 'type':
-            ac.type = name;
+            ac.typeFilter(name);
         elif typeOrGroup == 'group':
             #need to check permission for seek
-            ac.group = name;
-
+            ac.groupFilter(name);
         ac.acFilter()
-        # ac = ac[:6]
         return render_to_response('actlist.html', {'activities': ac.ac[:6]})
 
 class activityFilterForm(forms.Form):
@@ -61,19 +62,25 @@ class activityFilterForm(forms.Form):
     title = forms.CharField(label='title', max_length=30, required = False)
 
     def acFilter(self):
-        if 'type' in self:
-            self.ac = self.ac.filter(type = self.type)
-        if 'group' in self:
-            self.ac = self.ac.filter(group = self.group)
-        if not 'seek' in self:   # do not include activities already due
+        if 'type' in self.data:
+            self.ac = self.ac.filter(type = self.cleaned_data['type'])
+        if 'group' in self.data:
+            self.ac = self.ac.filter(group = self.cleaned_data['group'])
+        if not 'seek' in self.data:   # do not include activities already due
             self.ac.filter(due_date__gte = datetime.datetime.now()) # naive datetime?
 
-        if 'title' in self:  # search title
-            self.ac = self.ac.filter(title__icontains = self.title)
+        if 'title' in self.data:  # search title
+            self.ac = self.ac.filter(title__icontains = self.cleaned_data['title'])
 
         self.ac = self.ac.order_by('-write_date')
 
     # may add group filter to obtain seeked or unseeked activities for different groups
+
+    def typeFilter(self, type):
+        self.ac = self.ac.filter(type = type)
+
+    def groupFilter(self, group):
+        self.ac = self.ac.filter(group = group)
 
 
 

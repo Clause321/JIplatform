@@ -4,17 +4,17 @@ var aaa=6;	//设定全局变量 i 初始值为 6
 
 function getMore() {	//定义函数
 
-	thisURL = document.URL; 
+	thisURL = document.URL;
 	var tOrp = "";
 	var subTyp = "";
 
 	for ( var i = 22; thisURL[i] != '/'; i++ )
 	{
 		tOrp = tOrp + thisURL[i];
-	} 
+	}
 
 	i++;
-	
+
 	if(tOrp == "group")
 {
 	while(thisURL[i] != '/')
@@ -22,14 +22,14 @@ function getMore() {	//定义函数
 		subTyp = subTyp + thisURL[i];
 		i++;
 	}
-	
+
 $.ajax({
         url: '/news/',
         type: "POST",
         dataType: "json",
         data: [
                     { name: "aaa", value: aaa },
-					{ name: "group", value: tOrp},
+					{ name: "group", value: subTyp},
         ],
 
         success: function (msg) {
@@ -53,7 +53,7 @@ $.ajax({
             alert(textStatus);
         }
     });
-	
+
 }
 else if(tOrp == "news" || tOrp == "activity" || tOrp == "announce" )
 {
@@ -63,11 +63,10 @@ else if(tOrp == "news" || tOrp == "activity" || tOrp == "announce" )
         dataType: "json",
         data: [
                     { name: "aaa", value: aaa },
-					{ name: "type", value: subTyp },
+					{ name: "type", value: tOrp },
         ],
 
         success: function (msg) {
-
             var len = msg.length;
 
             for (var j = 0; j < len; j++) {
