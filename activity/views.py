@@ -6,6 +6,7 @@ from django.core import serializers
 from django.core.context_processors import csrf
 from group.models import Group as Grp
 from django.contrib.auth.models import Group, User
+from django import forms
 import datetime
 
 def write_act(request):
@@ -29,17 +30,59 @@ def write_act(request):
 
 def activity(request, typeOrGroup, name):
     if request.method =='POST':
-        # add_more function, not complete for group. Should use filter form.
+        # using filter form, still need modification for js
         current_num = int(request.POST['aaa'])
-        new = Activity.objects.filter(type = 'news').order_by('-write_date')[current_num:current_num+4]
-        json = serializers.serialize('json', new)
-        return HttpResponse(json)
+        new = activityFilterForm(request.POST) # is this line right?
+        if new.is_valid():
+            new.acFilter()
+            json = serializers.serialize('json', new.ac[current_num:current_num+4])
+            return HttpResponse(json)
+        else:
+            return HttpResponse('The post data is not valid!')
     else:
+        ac = activityFilterForm()
+
+        ac.full_clean()
         if typeOrGroup == 'type':
-            activities = Activity.objects.filter(type = name).order_by('-write_date')[:6]
+            ac.typeFilter(name);
         elif typeOrGroup == 'group':
-            activities = Activity.objects.filter(group = name).order_by('-write_date')[:6]
-        return render_to_response('actlist.html', {'activities': activities})
+            #need to check permission for seek
+            ac.groupFilter(name);
+        ac.acFilter()
+        return render_to_response('actlist.html', {'activities': ac.ac[:6]})
+
+class activityFilterForm(forms.Form):
+    aaa = forms.IntegerField(required = False)
+    ac = Activity.objects.all()
+
+    type = forms.CharField(label='type', max_length=20, required = False)
+    group = forms.CharField(label='group', max_length=20, required = False)
+    seek = forms.BooleanField(required = False)
+
+    title = forms.CharField(label='title', max_length=30, required = False)
+
+    def acFilter(self):
+        if 'type' in self.data:
+            self.ac = self.ac.filter(type = self.cleaned_data['type'])
+        if 'group' in self.data:
+            self.ac = self.ac.filter(group = self.cleaned_data['group'])
+        if not 'seek' in self.data:   # do not include activities already due
+            self.ac.filter(due_date__gte = datetime.datetime.now()) # naive datetime?
+
+        if 'title' in self.data:  # search title
+            self.ac = self.ac.filter(title__icontains = self.cleaned_data['title'])
+
+        self.ac = self.ac.order_by('-write_date')
+
+    # may add group filter to obtain seeked or unseeked activities for different groups
+
+    def typeFilter(self, type):
+        self.ac = self.ac.filter(type = type)
+
+    def groupFilter(self, group):
+        self.ac = self.ac.filter(group = group)
+
+
 
 def activity_page(request, ID):
     # need to check permission if private
