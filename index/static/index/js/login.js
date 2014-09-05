@@ -13,7 +13,7 @@ function login() {	//定义函数
         ],
 
         success: function (msg) {
-			$("#tip1").append(msg);
+			alert(msg);
         },
 
         error: function (xmlHttpRequest, textStatus, errorThrown) {

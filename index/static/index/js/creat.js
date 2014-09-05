@@ -1,7 +1,7 @@
 function creat() {	//定义函数
-	var name = $("#username").val();
+	var name = $("#username1").val();
 	var pass1 = $("#password1").val();
-	var pass2 = $("#password1").val();
+	var pass2 = $("#password2").val();
     $.ajax({
         url: '/register/',
         type: "POST",
@@ -13,7 +13,15 @@ function creat() {	//定义函数
         ],
 
         success: function (msg) {
-			$("#tip2").append(msg.result);
+			if( msg.username ){
+			$("#tip21").append(msg.username[0].message);
+			}
+			if( msg.password1 ){
+			$("#tip22").append(msg.password1[0].message);
+			}
+			if( msg.password2 ){
+			$("#tip23").append(msg.password2[0].message);
+			}
         },
 
         error: function (xmlHttpRequest, textStatus, errorThrown) {
