@@ -1,6 +1,6 @@
 function creat() {	//定义函数
 	var name = $("#username").val();
-	var pass1 = $("#password1").val();		
+	var pass1 = $("#password1").val();
 	var pass2 = $("#password1").val();
     $.ajax({
         url: '/register/',
@@ -13,7 +13,7 @@ function creat() {	//定义函数
         ],
 
         success: function (msg) {
-			$("#tip2").append(msg);
+			$("#tip2").append(msg.result);
         },
 
         error: function (xmlHttpRequest, textStatus, errorThrown) {

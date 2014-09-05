@@ -2,18 +2,19 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, logout, authenticate
+import json as xjson
 
 def register(request):
-    error = {'username': '', 'password1': '', 'password2': ''}
     if request.method == 'POST':
         new_user = UserCreationForm(request.POST)
         # username, password1, password2
         if new_user.is_valid():
             new_user.save()
-            return HttpResponseRedirect('/login/')
-        error = new_user.errors
-
-    return HttpResponseRedirect('/', {'register_error': error}) # should use js to pass error message
+            response_data = {}
+            response_data['message'] = 'success'
+            return HttpResponse(xjson.dumps(response_data), content_type="application/json")
+        error = new_user.errors.as_json()
+        return HttpResponse(error, content_type="application/json")
 
 def login_view(request):
     error = ''
