@@ -15,21 +15,26 @@ def register(request):
             return HttpResponse(xjson.dumps(response_data), content_type="application/json")
         error = new_user.errors.as_json()
         return HttpResponse(error, content_type="application/json")
+    return HttpResponse('Please use post method')
 
 def login_view(request):
     error = ''
     if request.method == 'POST':
         user = authenticate(username = request.POST['username'],
                         password = request.POST['password'])
+        response_data = {}
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return HttpResponseRedirect('/')
+                response_data['message'] = 'success'
+                return HttpResponse(xjson.dumps(response_data), content_type="application/json")
             else:
                 error = "The account has been disabled"
         else:
             error = "The username and password were incorrect."
-        return HttpResponseRedirect('/', {'login_error': error}) # should use js to pass error message
+        response_data['message'] = error
+        return HttpResponse(xjson.dumps(response_data), content_type="application/json")
+    return HttpResponse('Please use post method')
 
 def logout_view(request):
     logout(request)
