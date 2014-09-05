@@ -13,7 +13,8 @@ function login() {	//定义函数
         ],
 
         success: function (msg) {
-			alert(msg);
+			$("#tip1").append(msg.message);
+			if(msg.message == "success"){window.location.reload();}
         },
 
         error: function (xmlHttpRequest, textStatus, errorThrown) {

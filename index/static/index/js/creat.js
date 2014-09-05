@@ -22,6 +22,7 @@ function creat() {	//定义函数
 			if( msg.password2 ){
 			$("#tip23").append(msg.password2[0].message);
 			}
+			if(msg.message == "success"){window.location.reload();}
         },
 
         error: function (xmlHttpRequest, textStatus, errorThrown) {
