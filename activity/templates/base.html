@@ -11,6 +11,8 @@
     <link href="{% static 'index/css/main.css' %}" rel="stylesheet" />
     <! js>
     <script src="{% static 'index/js/dialog.js' %}"></script>
+    <script src="{% static 'index/js/login.js' %}"></script>
+    <script src="{% static 'index/js/creat.js' %}"></script>
 
     {% block jscss %}{% endblock %}
 
@@ -42,44 +44,32 @@
 
 
     <div id="login" class="login">
-        {{login_error}}
-        {% if error %}
         <span class="tip" id="tip1"></span>
-        {% endif %}
 
-        <form action="/login/" method="post">
 
             <div class="username">
                 <label for="username">用户名:</label>
-                <input type="text" name="username" class="textarea" />
+                <input type="text" name="username" class="textarea" id="username"/>
             </div>
 
             <div class="password">
                 <label for="password">密码:&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <input type="password" name="password" class="textarea" />
+                <input type="password" name="password" class="textarea" id="password"/>
             </div>
 
             <div class="loginbtn">
-                <!--img src="/static/index/pic/loginbtn.gif" onclick="submit();" /-->
-                <input type="submit" value="submit"/>
-            </div>
+                <a href="javascript:login();"><img src="/static/index/pic/loginbtn.gif" /></a>
+</div>
 
             <input type="hidden" name="next" value="{{ next|escape }}" />
 
-        </form>
 
     </div>
 
 
     <div id="creatuser" class="creatuser">
-        <!-->
-        {% if form.errors %}
         <span class="tip" id="tip2"></span>
-        {% endif %}
-        <-->
-        {{register_error}}
 
-        <form action="/register/" method="post">
 
             <div class="username">
                 <label for="username">用户名:&nbsp;&nbsp;&nbsp;&nbsp;</label>
@@ -97,11 +87,10 @@
             </div>
 
             <div class="cubtn">
-                <!--img src="/static/index/pic/cubtn.gif" onclick="submit();" /-->
-                <input type="submit" name="submit" />
+                <a href="javascript:creat();"><img src="/static/index/pic/cubtn.gif" /></a>
             </div>
 
-        </form>
+      
     </div>
 
 
