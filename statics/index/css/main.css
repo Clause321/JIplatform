@@ -66,7 +66,7 @@ html,body{
 		border-radius:5px;
 		
 		height: 30px;
-		width: 300px;
+		width: 10px;
 	   }
 	   
 .tip{
@@ -76,7 +76,7 @@ html,body{
 	color: red;
 	}	   
 	   
-.email1{
+.username{
 		padding-top: 30px;
 		padding-bottom: 30px;
 		margin-bottom: 30px;
@@ -85,7 +85,7 @@ html,body{
 		border-bottom: 1px solid #CCCCCC;	    
 	   }
 	   
-.password1{
+.password{
 		margin-bottom: 35px;
 		padding-bottom: 10px;
 		margin-left:auto;
@@ -106,7 +106,7 @@ html,body{
 		width: 385px; 
 	   }	   
 	   
-.name{
+.username{
 		padding-top: 20px;
 		padding-bottom: 15px;
 		margin-bottom: 15px;
@@ -116,7 +116,7 @@ html,body{
 	   }
 
 
-.email2{
+.password1{
 		padding-bottom: 15px;
 		margin-left:auto;
 		margin-right:auto;
